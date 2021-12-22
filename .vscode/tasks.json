@@ -1,0 +1,97 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "g++ compile",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\compiled_code.exe"
+      ],
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      },
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "g++ compile and run",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\compiled_code.exe",
+        "&&",
+        "${fileDirname}\\compiled_code.exe"
+      ],
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "g++ compile and run with input output",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\compiled_code.exe",
+        "&&",
+        "${fileDirname}\\compiled_code.exe",
+        "<",
+        "${fileDirname}\\input.txt",
+        ">",
+        "${fileDirname}\\output.txt"
+      ],
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      },
+      "group": "build"
+    }
+  ]
+}

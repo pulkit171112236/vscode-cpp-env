@@ -1,0 +1,32 @@
+{
+  "default-code": {
+    "prefix": "default-code",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "",
+      "// custom headers",
+      "#include \"HEADERS\\PRINTER.h\"",
+      "#include \"HEADERS\\READER.h\"",
+      "#include \"HEADERS\\mylib.h\"",
+      "",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "    // declaring custom buffers",
+      "    ifstream cin(\"input.txt\");",
+      "    ofstream cout(\"output.txt\");",
+      "    // optional performance optimizations",
+      "    ios_base::sync_with_stdio(false);",
+      "    std::cin.tie(0);",
+      "    // redirecting stdio to custom buffers",
+      "    std::cin.rdbuf(cin.rdbuf());",
+      "    std::cout.rdbuf(cout.rdbuf());",
+      "",
+      "",
+      "    return 0;",
+      "}",
+      ""
+    ],
+    "description": "Template c++"
+  }
+}
