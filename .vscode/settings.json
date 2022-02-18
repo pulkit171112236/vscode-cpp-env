@@ -72,5 +72,7 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
     },
-    "terminal.explorerKind": "external"
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+    "terminal.explorerKind": "external",
+    "terminal.integrated.tabs.enabled": false
 }

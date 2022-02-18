@@ -56,6 +56,26 @@ ostream& operator<<(ostream& os, set<T>& _uset) {
     os << "]";
     return os;
 }
+///// PRINT ORDERED_SET//////////////////////////
+template <typename T, typename T2>
+ostream& operator<<(ostream& os, set<T, T2>& _uset) {
+    os << "[ ";
+    for (auto elem : _uset) {
+        os << elem << "  ";
+    }
+    os << "]";
+    return os;
+}
+///// PRINT ORDERED_SET//////////////////////////
+template <typename T, typename T2>
+ostream& operator<<(ostream& os, multiset<T, T2>& _uset) {
+    os << "[ ";
+    for (auto elem : _uset) {
+        os << elem << "  ";
+    }
+    os << "]";
+    return os;
+}
 /////// PRINT MATRIX ///////////////////////////////////////////////
 template <typename T>
 ostream& operator<<(ostream& os, const vector<vector<T>>& matrix) {
