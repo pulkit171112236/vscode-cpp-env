@@ -9,7 +9,7 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}\\compiled_code.exe"
+        "${fileDirname}/compiled_code.out"
       ],
       "problemMatcher": {
         "owner": "cpp",
@@ -36,9 +36,9 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}\\compiled_code.exe",
+        "${fileDirname}/compiled_code.out",
         "&&",
-        "${fileDirname}\\compiled_code.exe"
+        "${fileDirname}/compiled_code.out"
       ],
       "problemMatcher": {
         "owner": "cpp",
@@ -68,13 +68,13 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}\\compiled_code.exe",
+        "${fileDirname}/compiled_code.out",
         "&&",
-        "${fileDirname}\\compiled_code.exe",
+        "${fileDirname}/compiled_code.out",
         "<",
-        "${fileDirname}\\input.txt",
+        "${fileDirname}/input.txt",
         ">",
-        "${fileDirname}\\output.txt"
+        "${fileDirname}/output.txt"
       ],
       "problemMatcher": {
         "owner": "cpp",
