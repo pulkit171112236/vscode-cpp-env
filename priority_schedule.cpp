@@ -68,9 +68,13 @@ void ps(int n, vector<int> at, vector<int> bt, vector<int> p) {
     for (int i = 0; i < n; i++) {
         Process curr_procc = proc_list[i];
         int clock_next = curr_procc.arrival;
+        // execute the jobs which arrived before the current process
         while (!pq.empty() && pq.top().start_time < clock_next) {
             Job job = pq.top();
             pq.pop();
+            // clock is lagging compared to job arrival
+            if (clock < job.start_time) clock = job.start_time;
+            // calculated available time-slot at cpu
             int time_slot = clock_next - clock;
             if (job.burst <= time_slot) {
                 // whole job to be executed
@@ -90,7 +94,10 @@ void ps(int n, vector<int> at, vector<int> bt, vector<int> p) {
         print(pq);
     }
     while (!pq.empty()) {
-        job_chart.push_back(pq.top());
+        Job job = pq.top();
+        if (clock < job.start_time) clock = job.start_time;
+        job_chart.push_back(Job(job.p_id, clock, job.burst, job.prior));
+        clock = clock + job.burst;
         pq.pop();
     }
     cout << job_chart << endl;
